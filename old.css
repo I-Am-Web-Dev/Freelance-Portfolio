@@ -1,0 +1,192 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #f2eadc;
+    color: #3d3024;
+    line-height: 1.7;
+}
+
+.header {
+    background: #6b4428;
+    color: white;
+    padding: 18px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 4px solid #4c301e;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+nav {
+    display: flex;
+    gap: 22px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.hero {
+    width: 86%;
+    max-width: 1200px;
+    margin: 45px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    align-items: center;
+}
+
+.hero-text {
+    background: #fff8ed;
+    border: 1px solid #c8b59c;
+    padding: 35px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 18px;
+    color: #5b3922;
+}
+
+.hero p {
+    margin-bottom: 25px;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 370px;
+    object-fit: cover;
+    border: 5px solid #d2bda3;
+}
+
+.button {
+    display: inline-block;
+    background: #754820;
+    color: white;
+    padding: 11px 20px;
+    text-decoration: none;
+    border: 1px solid #4f301c;
+}
+
+.button:hover {
+    background: #4f301c;
+}
+
+.welcome,
+.menu,
+.contact {
+    width: 86%;
+    max-width: 1200px;
+    margin: 55px auto;
+}
+
+.welcome {
+    background: #fff8ed;
+    border: 1px solid #c8b59c;
+    padding: 40px;
+}
+
+h2 {
+    font-size: 32px;
+    color: #5b3922;
+    margin-bottom: 20px;
+}
+
+.welcome p {
+    margin-bottom: 15px;
+}
+
+.menu {
+    background: #e5d6c2;
+    padding: 40px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.menu-item {
+    background: #fff8ed;
+    border: 1px solid #c8b59c;
+    padding: 25px;
+}
+
+.menu-item h3 {
+    font-size: 22px;
+    color: #5b3922;
+    margin-bottom: 8px;
+}
+
+.menu-item strong {
+    display: block;
+    margin-top: 12px;
+    color: #754820;
+}
+
+.contact {
+    background: #fff8ed;
+    border: 1px solid #c8b59c;
+    padding: 40px;
+}
+
+.contact .button {
+    margin-top: 20px;
+}
+
+footer {
+    background: #4c301e;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 70px;
+}
+
+
+/* Basic mobile support — intentionally not polished */
+
+@media (max-width: 700px) {
+
+    .header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-image img {
+        height: 280px;
+    }
+}
