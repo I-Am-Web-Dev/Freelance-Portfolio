@@ -695,3 +695,132 @@ img {
         flex-direction: column;
     }
 }
+/* =========================
+   LANGUAGE SWITCHER BUTTONS
+========================= */
+
+.language-switcher {
+    position: relative;
+    display: inline-block;
+}
+
+.language-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    min-width: 58px;
+    height: 38px;
+    padding: 0 12px;
+
+    border: 1px solid var(--border);
+    border-radius: 100px;
+
+    background: var(--surface);
+    color: var(--text);
+
+    font-family: inherit;
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.language-button:hover {
+    background: var(--surface-dark);
+    border-color: #c8c8c3;
+}
+
+.language-button:active {
+    transform: scale(0.96);
+}
+
+/* Dropdown */
+
+.language-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+
+    min-width: 130px;
+    padding: 6px;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-5px);
+
+    transition:
+        opacity 0.2s ease,
+        visibility 0.2s ease,
+        transform 0.2s ease;
+}
+
+.language-menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.language-menu button {
+    width: 100%;
+    padding: 10px 12px;
+
+    border: none;
+    border-radius: 9px;
+
+    background: transparent;
+    color: var(--text);
+
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: 500;
+
+    text-align: left;
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.language-menu button:hover {
+    background: var(--surface-dark);
+    color: var(--accent);
+}
+
+/* Arabic positioning */
+
+html[dir="rtl"] .language-menu {
+    right: auto;
+    left: 0;
+}
+
+html[dir="rtl"] .language-menu button {
+    text-align: right;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    .language-button {
+        height: 36px;
+        min-width: 54px;
+        padding: 0 10px;
+    }
+
+    .language-menu {
+        min-width: 120px;
+    }
+}
